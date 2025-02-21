@@ -1,0 +1,148 @@
+<html>
+<head>
+  <title>Cube Ball Game</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #222;
+    }
+
+    canvas {
+      display: block;
+    }
+
+    #resetButton {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 10px 20px;
+      background-color: #1484CD;
+      color: white;
+      border: none;
+      cursor: pointer;
+      z-index: 10; /* Ensure it's above the canvas */
+    }
+
+    #tipDisplay {
+      position: absolute;
+      top: 60px; /* Adjust as needed */
+      left: 10px;
+      color: white;
+      font-family: sans-serif;
+      font-size: 16px;
+      z-index: 10;
+      opacity: 1;
+      transition: opacity 3s ease-in-out;
+    }
+
+    #tipDisplay.fade-out {
+      opacity: 0;
+    }
+
+    #leftWall {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px; /* Adjust width as needed */
+        height: 100%;
+        background-color: red;
+        z-index: 5; /* Make sure it's above the canvas but below the reset button */
+    }
+  </style>
+</head>
+<body>
+  <button id="resetButton">Reset</button>
+  <div id="tipDisplay"></div>
+  <div id="leftWall"></div>
+  <canvas id="gameCanvas"></canvas>
+  <script type="module" src="game.js"></script>
+  <script>
+    async function loadTips() {
+      const response = await fetch('tips.txt');
+      const text = await response.text();
+      const lines = text.split('\n');
+      const tipsWithRarity = [];
+      let emptyLineCount = 0;
+
+      for (const line of lines) {
+        if (line.trim() === '') {
+          emptyLineCount++;
+        } else {
+          let rarity = 1;
+          if (emptyLineCount > 0) {
+            rarity = 1 / (emptyLineCount * emptyLineCount); // Adjust rarity calculation as needed
+          }
+          tipsWithRarity.push({ tip: line, rarity: rarity });
+          emptyLineCount = 0;
+        }
+      }
+
+      return tipsWithRarity;
+    }
+
+    let lastTip = null;
+    function getRandomTip(tipsWithRarity) {
+      let totalRarity = 0;
+      for (const tipObj of tipsWithRarity) {
+        totalRarity += tipObj.rarity;
+      }
+
+      let randomValue = Math.random() * totalRarity;
+      let cumulativeRarity = 0;
+      let selectedTip = null;
+
+      // Try selecting a different tip, with a maximum of 10 attempts
+      for (let attempt = 0; attempt < 10; attempt++) {
+        randomValue = Math.random() * totalRarity;
+        cumulativeRarity = 0;
+
+        for (const tipObj of tipsWithRarity) {
+          cumulativeRarity += tipObj.rarity;
+          if (randomValue <= cumulativeRarity) {
+            selectedTip = tipObj.tip;
+            break;
+          }
+        }
+
+        if (selectedTip !== lastTip) {
+          lastTip = selectedTip; // Update the lastTip variable
+          return selectedTip;
+        }
+      }
+
+      // If we still couldn't find a different tip after several attempts, return any tip
+      // (this should be very rare)
+      lastTip = tipsWithRarity[0].tip; // Update lastTip to prevent infinite loops
+      return tipsWithRarity[0].tip;
+    }
+
+    async function startTipCycle() {
+      const tipsWithRarity = await loadTips();
+      const tipDisplay = document.getElementById('tipDisplay');
+      let tipTimeout;
+
+      function showTip() {
+        const selectedTip = getRandomTip(tipsWithRarity);
+        tipDisplay.textContent = selectedTip;
+        tipDisplay.classList.remove('fade-out'); // Ensure it's visible
+        
+        const tipLength = selectedTip.length;
+        let displayDuration = 1000 + tipLength * 50; // Base 1 second + 50ms per character
+        displayDuration = Math.max(5000, displayDuration);
+        
+        // Set timeout for fading out
+        tipTimeout = setTimeout(() => {
+          tipDisplay.classList.add('fade-out');
+          // Set timeout for next tip after fade-out
+          setTimeout(showTip, 5000); // Wait 5 seconds after fade-out
+        }, displayDuration); // Wait duration before fading away
+      }
+
+      showTip(); // Initial display
+    }
+
+    startTipCycle();
+  </script>
+</body>
+</html>
