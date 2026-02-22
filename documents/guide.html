@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-user Whiteboard - Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body style="max-width: 1000px; background-color: lightgray; color: #181818;">
+    <h1 style="margin-top: 0px; margin-bottom: 10px;">Multi-user Whiteboard — Guide</h1>
+    <p style="margin-bottom: 5px; margin-top: 0px;">Using this whiteboard is very simple for both the client and the server host.</p>
+    <p style="margin-top: 0px;"><b>IMPORTANT:</b> You are going to need python installed in order to host a server.</p>
+    <h2 style="margin-top: 0px; margin-bottom: 10px;">Hosting a Server</h2>
+    <p style="margin-top: 0px; margin-bottom: 3px;">To host a server, first open your command prompt in the file location that has the <code>server.py</code> file and run the following command:</p>
+    <div class="command_box">
+        <pre id="serverCommand" style="color: #F5F543;">python <a style="color: #E5E5E5;">server.py</a></pre>
+        <button id="copyBtn" onclick="copyCommand()" style="color: white;">Copy</button>
+    </div>
+    <p style="margin-bottom: 5px;">After that, the server should be running. It will give you a list of IPs, saying which IP the server started at.</p>
+    <p style="margin-top: 0px;">If you want to start the server with a different port than <code>5555</code>, just open the <code>server.py</code> file in any text editor and locate <code>server_port = 5555</code> from the screenshot below.</p>
+    <img src="images/ss0.png" style="border-radius: 5px;">
+    <p>Change <code>5555</code> to whatever you like, and you're good to go. Please note that valid ports are only numbers between <code>1</code> and <code>65535</code>.</p>
+    <p><b>NOTE: </b>The command prompt where you ran <code>python server.py</code> must stay open to keep the server running.</p>
+    <h2 style="margin-top: 0px; margin-bottom: 10px;">Joining a Server</h2>
+    <p style="margin-top: 0px; margin-bottom: 3px;">To join a server, run the <code>client.exe</code> file, input the host's server IP and Port (the default port is <code>5555</code>), and click <code>OK</code>.</p>
+    <p style="margin-bottom: 3px;"><b>NOTE: </b>The current version of this app requires the inputted IP to be the actual IP; you can't input a domain as an alias to the IP.</p>
+    <p style="margin-top: 0px;">I will be working on making the ability to use an alias at a different time.</p>
+    <h2 style="margin-bottom: 10px;">Troubleshooting</h2>
+    <p style="margin-top: 0px;">If you're having trouble with anything, this section will cover the most likely causes to your troubles.</p>
+    <p>If you're having trouble connecting to a server, make sure you've enetered the correct server IP and Port. If that's not the issue, the most likely cause is that the server you're trying to connect to is not on your local network (LAN). If you want to connect to a server outside of your local netowrk (LAN), then make sure said server is <a href="https://www.youtube.com/watch?v=jxskGok7Z-E" target="_blank">port-forwarded.</a></p>
+    <p>If you're still having issues, you can look up your issue relating to servers, and connecting to servers. Or, the IP you've entered is still incorrect, in that case, the correct IP may be your router's IP address.</p>
+
+    <script>
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function copyCommand() {
+            const text = document.getElementById("serverCommand").innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                document.getElementById("copyBtn").textContent = "Copied";
+                const container = document.querySelectorAll(".command_box");
+                container.forEach(command_box => {
+                    command_box.style.gap = "298px";
+                })
+            }).catch(err => console.error("Failed to copy:", err));
+            await sleep(2000);
+            document.getElementById("copyBtn").textContent = "Copy";
+            const container = document.querySelectorAll(".command_box");
+            container.forEach(command_box => {
+                command_box.style.gap = "309px";
+            })
+        }
+    </script>
+
+    <style>
+        /*body {
+            font-family: "Nunito", sans-serif;
+            font-optical-sizing: auto;
+        }*/
+        h1, h2 {
+            text-decoration: underline;
+        }
+        img {
+            max-width: 309;
+            min-width: 309;
+        }
+        code {
+            background-color: darkgray;
+            color: white;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: Consolas, monospace;
+            font-size: 0.8em;
+        }
+        .command_box {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 309px;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+            padding: 5px 10px;
+            background: #181818;
+            font-family: monospace;
+        }
+
+        .command_box pre {
+            margin: 0;
+            user-select: all; /* allow manual selection too */
+        }
+
+        .command_box button {
+            margin-left: 10px;
+            padding: 2px 8px;
+            cursor: pointer;
+            border: 1px solid #888;
+            border-radius: 4px;
+            background: #3B5C81;
+            
+        }
+
+        .command_box button:hover {
+            background: #5a80ac;
+        }
+    </style>
+</body>
+</html>
