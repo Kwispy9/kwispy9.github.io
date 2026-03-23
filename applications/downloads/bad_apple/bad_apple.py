@@ -16,20 +16,6 @@ frame_num = 1
 current_time = 0
 total_time = 28435
 
-external_files = [
-    ("frames.py", "https://kwispy9.github.io/applications/downloads/bad_apple/frames.py"),
-    ("frames2.py", "https://kwispy9.github.io/applications/downloads/bad_apple/frames2.py"),
-    ("bad_apple.wav", "https://drive.google.com/uc?export=download&id=1dQULNxgPfK-0VdJJO7_bMekR2nHRaiVO")
-]
-
-def download_files(url, path):
-    with tqdm(unit='B', unit_scale=True, unit_divisor=1024, miniters=1, desc=f"Downloading {os.path.basename(path)}") as t:
-        def reporthook(block_num, block_size, total_size):
-            if total_size > 0:
-                t.total = total_size
-            t.update(block_size)
-        urllib.request.urlretrieve(url, path, reporthook=reporthook)
-
 def format_time(seconds):
     minutes = seconds // 60
     seconds = seconds % 60
@@ -70,18 +56,6 @@ def animation():
 def clear():
     os.system("cls" if os.name == "nt" else "clear")
 
-def get_online_version():
-    url = "https://kwispy9.github.io/applications/downloads/bad_apple/version.txt"
-    with urllib.request.urlopen(url) as response:
-        return response.read().decode().strip()
-def get_local_version(path):
-    if not os.path.exists(path):
-        return None
-    with open(path, "r") as f:
-        return f.read().strip()
-def save_local_version(path, version):
-    with open(path, "w") as f:
-        f.write(version)
 clear()
 hide_debug = input("Show debug info? [Y/N] (leave blank to keep default (N/No))\n> ").strip().lower()
 if hide_debug == "y" or hide_debug == "yes":
@@ -109,22 +83,7 @@ else:
 RESOURCES = os.path.join(base_dir, "resources")
 os.makedirs(RESOURCES, exist_ok=True)
 
-version_path = os.path.join(RESOURCES, "version.txt")
-online_version = get_online_version()
-local_version = get_local_version(version_path)
-
-# print("Checking for updates...")
-# if online_version != local_version:
-#     print("Downloading resources...")
-#     for filename, url in external_files:
-#         path = os.path.join(RESOURCES, filename)
-#         download_files(url, path)
-#     save_local_version(version_path, online_version)
-# else:
-#     print("No new updates detected.")
-
-# sys.path.append(RESOURCES)
-
+version_path = os.path.join(RESOURCES, "versions.json")
 
 if mode == "soft":
     frames_path = os.path.join(RESOURCES, "frames.py")
