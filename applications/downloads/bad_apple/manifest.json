@@ -1,18 +1,18 @@
 {
   "bad_apple.py": {
-    "ver": "1.0"
+    "ver": "1.0",
     "url": "https://kwispy9.github.io/applications/downloads/bad_apple/bad_apple.py"
   },
   "bad_apple.wav": {
-    "ver": "1.0"
+    "ver": "1.0",
     "url": "https://drive.google.com/uc?export=download&id=1dQULNxgPfK-0VdJJO7_bMekR2nHRaiVO"
   },
   "frames.py": {
-    "ver": "1.0"
+    "ver": "1.0",
     "url": "https://kwispy9.github.io/applications/downloads/bad_apple/frames.py"
   },
   "frames2.py": {
-    "ver": "1.0"
+    "ver": "1.0",
     "url": "https://kwispy9.github.io/applications/downloads/bad_apple/frames2.py"
   }
 }
