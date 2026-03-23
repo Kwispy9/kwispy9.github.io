@@ -1,6 +1,14 @@
 {
-  "bad_apple.py": "1.0",
-  "bad_apple.wav": "1.0",
-  "frames.py": "1.0",
-  "frames2.py": "1.0",
+  "bad_apple.py": {
+    "url": "https://kwispy9.github.io/applications/downloads/bad_apple/bad_apple.py"
+  },
+  "bad_apple.wav": {
+    "url": "https://drive.google.com/uc?export=download&id=1dQULNxgPfK-0VdJJO7_bMekR2nHRaiVO"
+  },
+  "frames.py": {
+    "url": "https://kwispy9.github.io/applications/downloads/bad_apple/frames.py"
+  },
+  "frames2.py": {
+    "url": "https://kwispy9.github.io/applications/downloads/bad_apple/frames2.py"
+  }
 }
