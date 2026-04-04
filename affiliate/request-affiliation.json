@@ -1,0 +1,14 @@
+[
+    {
+        "title":"Email Me",
+        "desc":"you most likely won't get a response",
+        "icon":"email.png",
+        "link":"mailto:brancake@theschades.com?cc=ninjakeeper861@gmail.com&subject=I%20would%20like%20to%20affiliate%20with%20you&body=Title%3A%20%7Bthe%20underlined%20part%7D%0ADescription%3A%20%7Bthe%20part%20directly%20after%20the%20underlined%20part%7D%0ALink%3A%20%7Bthe%20page%20that%20you%20would%20like%20to%20feature%7D%0A%0Apreferably%2C%20the%20icon%20would%20be%20a%20.svg%20file%0AIcon%3A%20%7Bthe%20little%20image%20on%20the%20button%20(attach%20an%20image%20file)%7D"
+    },
+    {
+        "title":"Create a Ticket",
+        "desc":"on discord",
+        "icon":"discord.png",
+        "link":"https://discord.gg/QWCGZpUDTt"
+    }
+]
