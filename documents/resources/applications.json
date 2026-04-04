@@ -4,5 +4,23 @@
     "desc":"a really cool and awesome app",
     "icon":"/documents/images/application_name.ico",
     "link":"/applications/downloads/Application Compiler Name.exe"
+  },
+  {
+    "title":"Calculator.exe",
+    "desc":"a calculator app",
+    "icon":"/documents/images/calculator_app.ico",
+    "link":"/applications/downloads/Calculator.exe"
+  },
+  {
+    "title":"Multi-user Whiteboard.zip",
+    "desc":"a whiteboard that multiple people can use together",
+    "icon":"/documents/images/multi-user_whiteboard.ico",
+    "link":"/applications/downloads/Multi-user Whiteboard.zip"
+  },
+  {
+    "title":"Bad Apple.zip",
+    "desc":"a 16-year-old animation that's become a meme",
+    "icon":"/documents/images/bad_apple-icon.ico",
+    "link":"/applications/downloads/bad_apple.zip"
   }
 ]
