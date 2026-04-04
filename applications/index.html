@@ -11,16 +11,23 @@
             text-decoration: none;
             color: inherit;
         }
+        img {
+            vertical-align: -3px;
+        }
+        button {
+            cursor: pointer;
+        }
         .item-list {
             overflow: auto;
             resize: both;
             max-width: 1000px;
             min-width: 330px;
             max-height: 700px;
-            min-height: 92px;
+            min-height: 88px;
         }
         .item {
             padding: 5px;
+            cursor: pointer;
         }
         .item:hover {
             background-color: rgb(255, 255, 255);
@@ -46,28 +53,28 @@
     <div>
         <h2 style="margin-bottom: 3px;">downloads</h2>
         <div class="item-list" style="border: 1px inset; word-wrap: normal; width: 330px; background-color: rgb(236, 236, 236);">
-            <div class="item">
+            <div class="item" onclick="window.location='downloads/Application Compiler Name.exe'">
                 <a href="downloads/Application Compiler Name.exe">
                     <img src="/documents/images/application_name.ico" style="width: 16px; height: 16px;">
                     <span class="title">Application Name.exe </span><span class="desc">a really cool and awesome app</span>
                 </a>
             </div>
             <hr style="margin: 0; margin-left: 5px; margin-right: 5px;">
-            <div class="item">
+            <div class="item" onclick="window.location='downloads/Calculator.exe'">
                 <a href="downloads/Calculator.exe">
                     <img src="/documents/images/calculator_app.ico" style="width: 16px; height: 16px;">
                     <span class="title">Calculator.exe </span><span class="desc">a calculator app</span>
                 </a>
             </div>
             <hr style="margin: 0; margin-left: 5px; margin-right: 5px;">
-            <div class="item">
+            <div class="item" onclick="window.location='downloads/Multi-user Whiteboard.zip'">
                 <a href="downloads/Multi-user Whiteboard.zip">
                     <img src="/documents/images/multi-user_whiteboard.ico" style="width: 16px; height: 16px;">
                     <span class="title">Multi-user Whiteboard.zip </span><span class="desc">a whiteboard that multiple people can use together</span>
                 </a>
             </div>
             <hr style="margin: 0; margin-left: 5px; margin-right: 5px;">
-            <div class="item">
+            <div class="item" onclick="window.location='downloads/bad_apple.zip'">
                 <a href="downloads/bad_apple.zip">
                     <img src="/documents/images/bad_apple-icon.ico" style="width: 16px; height: 16px;">
                     <span class="title">Bad Apple.zip </span><span class="desc">a 16-year-old animation that has become a meme</span>
