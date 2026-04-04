@@ -53,8 +53,26 @@
             color: inherit;
         }
     </style>
-    <script>
-        /* for scripting, obviously */
+    <script defer>
+        fetch('/documents/resources/applications.json')
+        .then(res => res.json())
+        .then(data => {
+            const list = document.getElementById('affiliates-list');
+            data.forEach((item, index) => {
+                const image = item.icon ? `<img src="${item.icon}" style="width: 16px; height: 16px;">` : '';
+                const hr = index < data.length - 1 ? `<hr>` : '';
+                list.innerHTML += `
+                    <div class="item">
+                        <a href="${item.link}">
+                            ${image}
+                            <span class="title">${item.title} </span><span class="desc">${item.desc}</span>
+                        </a>
+                    </div>
+                    ${hr}
+                `;
+            });
+        });
+
     </script>
 
 </head>
@@ -65,34 +83,8 @@
     </div>
     <div>
         <h2 style="margin-bottom: 3px;">downloads</h2>
-        <div class="item-list" style="border: 1px inset; word-wrap: normal; width: 330px; background-color: rgb(236, 236, 236);">
-            <div class="item" onclick="window.location='downloads/Application Compiler Name.exe'">
-                <a href="downloads/Application Compiler Name.exe">
-                    <img src="/documents/images/application_name.ico" style="width: 16px; height: 16px;">
-                    <span class="title">Application Name.exe </span><span class="desc">a really cool and awesome app</span>
-                </a>
-            </div>
-            <hr>
-            <div class="item" onclick="window.location='downloads/Calculator.exe'">
-                <a href="downloads/Calculator.exe">
-                    <img src="/documents/images/calculator_app.ico" style="width: 16px; height: 16px;">
-                    <span class="title">Calculator.exe </span><span class="desc">a calculator app</span>
-                </a>
-            </div>
-            <hr>
-            <div class="item" onclick="window.location='downloads/Multi-user Whiteboard.zip'">
-                <a href="downloads/Multi-user Whiteboard.zip">
-                    <img src="/documents/images/multi-user_whiteboard.ico" style="width: 16px; height: 16px;">
-                    <span class="title">Multi-user Whiteboard.zip </span><span class="desc">a whiteboard that multiple people can use together</span>
-                </a>
-            </div>
-            <hr>
-            <div class="item" onclick="window.location='downloads/bad_apple.zip'">
-                <a href="downloads/bad_apple.zip">
-                    <img src="/documents/images/bad_apple-icon.ico" style="width: 16px; height: 16px;">
-                    <span class="title">Bad Apple.zip </span><span class="desc">a 16-year-old animation that has become a meme</span>
-                </a>
-            </div>
+        <div id="affiliates-list" class="item-list" style="border: 1px inset; word-wrap: normal; width: 330px; background-color: rgb(236, 236, 236);">
+            
         </div>
     </div>
     <div>
