@@ -59,7 +59,7 @@
         .then(data => {
             const list = document.getElementById('affiliates-list');
             data.forEach((item, index) => {
-                const image = item.image ? `<img src="${item.icon}" style="width: 16px; height: 16px;">` : '';
+                const image = item.icon ? `img src="${item.icon}" style="width: 16px; height: 16px;">` : '';
                 const hr = index < data.length - 1 ? `<hr>` : '';
                 list.innerHTML += `
                     <div class="item">
