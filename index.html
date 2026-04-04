@@ -38,8 +38,10 @@
             cursor: pointer;
         }
         .item {
-            padding: 5px;
             cursor: pointer;
+        }
+        .item a {
+            padding: 5px;
         }
         .item:hover {
             background-color: rgb(255, 255, 255);
@@ -59,10 +61,11 @@
             const list = document.getElementById('affiliates-list');
             data.forEach((item, index) => {
                 const image = item.icon ? `<img src="${item.icon}" style="width: 16px; height: 16px;">` : '';
+                const target = item.new_tab ? `target="_blank"` : '';
                 const hr = index < data.length - 1 ? `<hr>` : '';
                 list.innerHTML += `
-                    <div class="item" onclick="window.location='${item.link}'">
-                        <a href="${item.link}">
+                    <div class="item">
+                        <a href="${item.link}" ${target}>
                             ${image}
                             <span class="title">${item.title} </span><span class="desc">${item.desc}</span>
                         </a>
