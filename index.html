@@ -54,7 +54,12 @@
         }
     </style>
     <script>
-        /* for scripting, obviously */
+        fetch('/documents/resources/affiliates.json')
+            .then(res => res.json())    
+            .then(data => {
+        
+            });
+
     </script>
 
 </head>
