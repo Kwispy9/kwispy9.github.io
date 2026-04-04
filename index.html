@@ -57,8 +57,21 @@
         fetch('/documents/resources/affiliates.json')
             .then(res => res.json())    
             .then(data => {
-        
+            const list = document.getElementById('affiliates-list');
+                data.forEach((item, index) => {
+                const image = item.image ? `<img src="${item.image}" style="width: 16px; height: 16px;">` : '';
+                const hr = index < data.length - 1 ? `<hr style="margin: 0; margin-bottom: 10px;">` : '';
+                list.innerHTML += `
+                    <div class="item">
+                        <a href="${item.link}">
+                            ${image}
+                            <span class="title">${item.title} </span><span class="desc">${item.desc}</span>
+                        </a>
+                    </div>
+                    ${hr}
+                `;
             });
+        });
 
     </script>
 
