@@ -53,7 +53,7 @@
             color: inherit;
         }
     </style>
-    <script>
+    <script defer>
         fetch('/documents/resources/affiliates.json')
             .then(res => res.json())    
             .then(data => {
@@ -88,26 +88,8 @@
     </div>
     <div>
         <h2 style="margin-bottom: 3px;">Affiliated Brands (external links)</h2>
-        <div class="item-list" style="border: 1px inset; word-wrap: normal; width: 330px; background-color: rgb(236, 236, 236);">
-            <div class="item" onclick="window.location='refracted-studios'">
-                <a href="refracted-studios">
-                    <img src="documents/images/refractedstudios-icon.png" style="width: 16px; height: 16px;">
-                    <span class="title">RefractedStudios </span><span class="desc">anything and everything</span>
-                </a>
-            </div>
-            <hr>
-            <div class="item" onclick="window.location='https://mruniverseyt.github.io'">
-                <a href="https://mruniverseyt.github.io">
-                    <span class="title">Mr_UniverseYT </span><span class="desc">a friend of mine</span>
-                </a>
-            </div>
-            <hr>
-            <div class="item" onclick="window.location='https://discord.gg/UkhufU48RS'">
-                <a href="https://discord.gg/UkhufU48RS">
-                    <img src="documents/images/discord_server-icon.png" style="width: 16px; height: 16px;">
-                    <span class="title">cookie's cool cardboard box </span><span class="desc">my discord server</span>
-                </a>
-            </div>
+        <div id="affiliates-list" class="item-list" style="border: 1px inset; word-wrap: normal; width: 330px; background-color: rgb(236, 236, 236);">
+            
         </div>
     </div>
 </body>
