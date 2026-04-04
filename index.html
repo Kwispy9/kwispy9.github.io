@@ -11,6 +11,10 @@
             text-decoration: none;
             color: inherit;
         }
+        .item-list {
+            overflow: auto;
+            resize: both;
+        }
         .item {
             padding: 5px;
         }
@@ -18,6 +22,7 @@
             background-color: rgb(255, 255, 255);
         }
         .title {
+            text-decoration: underline;
             color: rgb(58, 58, 105);
         }
         .desc {
@@ -41,7 +46,7 @@
     </div>
     <div>
         <h2 style="margin-bottom: 3px;">Affiliated Brands (external links)</h2>
-        <div style="border: 1px inset; word-wrap: normal; width: 330px; background-color: rgb(236, 236, 236);">
+        <div class="item-list" style="border: 1px inset; word-wrap: normal; width: 330px; background-color: rgb(236, 236, 236);">
             <div class="item">
                 <a href="refracted-studios">
                     <img src="documents/images/refractedstudios-icon.png" style="width: 16px; height: 16px;">
