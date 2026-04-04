@@ -11,16 +11,23 @@
             text-decoration: none;
             color: inherit;
         }
+        img {
+            vertical-align: -3px;
+        }
         .item-list {
             overflow: auto;
             resize: both;
             max-width: 1000px;
             min-width: 330px;
             max-height: 700px;
-            min-height: 92px;
+            min-height: 88px;
+        }
+        button {
+            cursor: pointer;
         }
         .item {
             padding: 5px;
+            cursor: pointer;
         }
         .item:hover {
             background-color: rgb(255, 255, 255);
@@ -51,20 +58,20 @@
     <div>
         <h2 style="margin-bottom: 3px;">Affiliated Brands (external links)</h2>
         <div class="item-list" style="border: 1px inset; word-wrap: normal; width: 330px; background-color: rgb(236, 236, 236);">
-            <div class="item">
+            <div class="item" onclick="window.location='refracted-studios'">
                 <a href="refracted-studios">
                     <img src="documents/images/refractedstudios-icon.png" style="width: 16px; height: 16px;">
                     <span class="title">RefractedStudios </span><span class="desc">anything and everything</span>
                 </a>
             </div>
             <hr style="margin: 0; margin-left: 5px; margin-right: 5px;">
-            <div class="item">
+            <div class="item" onclick="window.location='https://mruniverseyt.github.io'">
                 <a href="https://mruniverseyt.github.io">
                     <span class="title">Mr_UniverseYT </span><span class="desc">a friend of mine</span>
                 </a>
             </div>
             <hr style="margin: 0; margin-left: 5px; margin-right: 5px;">
-            <div class="item">
+            <div class="item" onclick="window.location='https://discord.gg/UkhufU48RS'">
                 <a href="https://discord.gg/UkhufU48RS">
                     <img src="documents/images/discord_server-icon.png" style="width: 16px; height: 16px;">
                     <span class="title">cookie's cool cardboard box </span><span class="desc">my discord server</span>
