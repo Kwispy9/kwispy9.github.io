@@ -4,6 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cookie's applications</title>
+
+    <style>
+        a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+        .item {
+            padding: 5px;
+        }
+        .item:hover {
+            background-color: rgb(255, 255, 255);
+        }
+        .title {
+            text-decoration: underline;
+            color: rgb(58, 58, 105);
+        }
+        .desc {
+            color: inherit;
+        }
+    </style>
+    <script>
+        /* for scripting, obviously */
+    </script>
+
 </head>
 <body style="background-color: lightgray; color: #181818;">
     <h1>cookie's applications</h1>
@@ -11,19 +36,36 @@
         <button onclick="history.back()">Back</button>
     </div>
     <div>
-        <h2>downloads</h2>
-        <p>
-            <a href="downloads/Application Compiler Name.exe">Application Name.exe </a>a really cool and awesome app
-        </p>
-        <p>
-            <a href="downloads/Calculator.exe">Calculator.exe </a>a calculator app
-        </p>
-        <p>
-            <a href="downloads/Multi-user Whiteboard.zip">Multi-user Whiteboard.zip </a>a whiteboard that multiple people can use together
-        </p>
-        <p>
-            <a href="downloads/bad_apple.zip">Bad Apple in Python </a>a 16-year-old animation that has become a meme
-        </p>
+        <h2 style="margin-bottom: 3px;">downloads</h2>
+        <div style="border: 1px inset; word-wrap: normal; width: 330px; background-color: rgb(236, 236, 236);">
+            <div class="item">
+                <a href="downloads/Application Compiler Name.exe">
+                    <img src="/documents/images/application_name.ico" style="width: 16px; height: 16px;">
+                    <span class="title">Application Name.exe </span><span class="desc">a really cool and awesome app</span>
+                </a>
+            </div>
+            <hr style="margin: 0; margin-left: 5px; margin-right: 5px;">
+            <div class="item">
+                <a href="downloads/Calculator.exe">
+                    <img src="/documents/images/calculator_app.ico" style="width: 16px; height: 16px;">
+                    <span class="title">Calculator.exe </span><span class="desc">a calculator app</span>
+                </a>
+            </div>
+            <hr style="margin: 0; margin-left: 5px; margin-right: 5px;">
+            <div class="item">
+                <a href="downloads/Multi-user Whiteboard.zip">
+                    <img src="/documents/images/multi-user_whiteboard.ico" style="width: 16px; height: 16px;">
+                    <span class="title">Multi-user Whiteboard.zip </span><span class="desc">a whiteboard that multiple people can use together</span>
+                </a>
+            </div>
+            <hr style="margin: 0; margin-left: 5px; margin-right: 5px;">
+            <div class="item">
+                <a href="downloads/bad_apple.zip">
+                    <img src="/documents/images/bad_apple-icon.ico" style="width: 16px; height: 16px;">
+                    <span class="title">Bad Apple.zip </span><span class="desc">a 16-year-old animation that has become a meme</span>
+                </a>
+            </div>
+        </div>
     </div>
     <div>
         <h2>documents</h2>
@@ -34,27 +76,4 @@
         </div>
     </div>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
