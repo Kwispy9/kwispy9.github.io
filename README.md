@@ -1,3 +1,3 @@
-# cookie's website
-This is a site for all my projects and things. Each project has their own licenses and rules for using them.
-**Please enjoy**
+# cookie's website — source code
+This is the source code for cookie's website—a personal site for cookie and his projects.
+This source code is here to show and share the code making the site work. This is not cookie's site (though you can still preview it at https://kwispy9.github.io/templates ).
