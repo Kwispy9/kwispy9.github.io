@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+
+    <style>
+        .list-item:hover {
+            background-color: white;
+        }
+        #list {
+            cursor: default;
+        }
+        button {
+            cursor: pointer;
+        }
+    </style>
+
+    <script defer>
+        fetch("/admin/data")
+        .then(res => res.json())
+        .then(data => {
+            const list = document.getElementById("list");
+            data.forEach((item, index) => {
+                const hr = index < data.length - 1 ? `<hr style="margin: 0;">` : '';
+                if (item[2] === "/") {
+                    item = item.toString().replace(" /", " home/")
+                }
+
+                item = item.toString()
+                item = item.replace(",", "; ");
+                item = item.replaceAll(",", ", ");
+                item = item.replace("/", "home/")
+                list.innerHTML += `
+                    <div id="item" class="list-item" style="padding: 5px;" onclick="navigator.clipboard.writeText(this.innerText).then(() => alert('Copied: ' + this.innerText))">
+                        ${item}
+                    </div>
+                    ${hr}
+                `
+            });
+
+            const counts = {};
+            data.forEach(item => {
+                const minute = item[4].slice(0, 16);
+                counts[minute] = (counts[minute] || 0) + 1;
+            });
+
+            const labels = Object.keys(counts);
+            const values = Object.values(counts);
+
+            new Chart(document.getElementById("activityChart"), {
+                type: "line",
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: "Requests per minute",
+                        data: values,
+                        fill: true,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            ticks: {
+                                stepSize: 1
+                            }
+                        }
+                    }
+                }
+            });
+            const popular_counts = {};
+            data.forEach(item => {
+                if (item[3] === 200){
+                    const minute = item[2];
+                    popular_counts[minute] = (popular_counts[minute] || 0) + 1;
+                }
+            });
+
+            const popular_labels = Object.keys(popular_counts).map(label => {
+                if (label === "/") return "home/";
+                return label.replace("/", "home/");
+            });
+            const popular_values = Object.values(popular_counts);
+
+            new Chart(document.getElementById("popularityChart"), {
+                type: "bar",
+                data: {
+                    labels: popular_labels,
+                    datasets: [{
+                        label: "Times visited",
+                        data: popular_values,
+                        fill: true,
+                        tension: 0.3,
+                        maxBarThickness: 50,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            ticks: {
+                                stepSize: 1
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body style="background-color: lightgray; color: #181818; margin: 0; margin-left: 5px; margin-right: 5px;">
+    <div style="display: flex; gap: 10px; align-items: flex-start;">
+        <div style="display: flex; flex-direction: column;">
+            <div>
+                <h3 style="margin: 0;">IP address, web address, status code, date/time</h3>
+            </div>
+            <div style="margin-right: 5px; width: fit-content; max-width: 800px;">
+                <div id="list" style="overflow: auto; background-color: rgb(236, 236, 236); margin-top: 5px; border: 2px inset; height: 480px; max-height: 500px; width: 500px; min-width: 500px; max-width: 800px; resize: horizontal; scroll-behavior: auto;">
+                </div>
+            </div>
+            <div style="width: fit-content; margin-right: 5px;">
+                <iframe src="/admin/data" style="width: 500px; height: 460px; resize: horizontal; margin-top: 10px; background-color: #181818; color: white; min-width: 500px; max-width: 800px; padding-bottom: 15px;"></iframe>
+            </div>
+        </div>
+        <div style="flex: 1;">
+            <h2 style="margin-bottom: 0;">Requests Per Minute</h2>
+            <div style="height: 300px; max-width: 800px; margin-top: 10px;">
+                <canvas id="activityChart"></canvas>
+            </div>
+            <h2 style="margin-bottom: 0;">Page Popularity</h2>
+            <div style="height: 300px; max-width: 800px; margin-top: 10px;">
+                <canvas id="popularityChart"></canvas>
+            </div>
+            <div style="margin-top: 10px;">
+                <button onclick="window.location='/admin/cmd'" style="font-size: larger;">Open CMD</button>
+                <button onclick="window.location='/admin/logout'" style="font-size: larger;">Log Out</button>
+            </div>
+            <div style="margin-top: 10px;">
+                <button onclick="window.location.href=window.location.href" style="font-size: larger;">Refresh</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

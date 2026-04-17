@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Server Command Panel</title>
+<style>
+    body {
+        background: #0C0C0C;
+        color: white;
+        padding: 20px;
+    }
+    input {
+        padding: 8px;
+        font-size: 16px;
+        background: #1b1b1b;
+        border: none;
+        color: white;
+        outline: none;
+        width: 500px;
+    }
+    button {
+        padding: 8px;
+        font-size: 16px;
+        background: #1b1b1b;
+        color: #969696;
+    }
+    #output {
+        margin-top: 20px;
+        padding: 10px;
+        background: #1b1b1b;
+        color: white;
+        overflow: auto;
+        margin-bottom: 20px;
+        white-space: pre-wrap;
+    }
+</style>
+</head>
+<body style="margin-top: 5px; padding-top: 0;">
+    <div style="margin-top: 10px;">
+        <button onclick="history.back()">Back</button>
+    </div>
+    <h1 style="margin-top: 10px;">Server Command Panel</h1>
+
+    <form onsubmit="sendCommand(); return false;">
+        <input type="text" id="commandInput" placeholder="Type a command...">
+        <button type="submit">Send</button>
+        <button onclick="sendCommand('help')" type="button">Help</button>
+    </form>
+
+    <div id="output" style="min-height: 700px; max-height: 800px; overflow: auto;"></div>
+
+    <script>
+    async function sendCommand(cmd=null) {
+        const input = document.getElementById('commandInput');
+        const command = cmd || input.value.trim();
+        if (!command) return;
+
+        const response = await fetch('/admin/cmd', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ command })
+        });
+
+        const data = await response.json();
+        const output = document.getElementById('output');
+
+        // Handle "help" command specially
+        if (command.toLowerCase() === 'help' && data.help) {
+            output.textContent = data.help.join('\n');
+        } else {
+            output.textContent += `> ${command}\n${JSON.stringify(data)}\n\n`;
+        }
+
+        input.value = '';
+    }
+    </script>
+</body>
+</html>
