@@ -1,0 +1,32 @@
+[
+    {
+        "text":"Home",
+        "link":"/refractedstudios",
+        "desc":"Head to the home page"
+    },
+    {
+        "text":"About Us",
+        "link":"#about",
+        "desc":"About our company and its origin"
+    },
+    {
+        "text":"Products",
+        "link":"/refractedstudios/products",
+        "desc":"View the products and services we offer"
+    },
+    {
+        "text":"Contact Us",
+        "link":"/refractedstudios#contact-us",
+        "desc":"Contact us directly"
+    },
+    {
+        "text":"Support",
+        "link":"/refractedstudios/support",
+        "desc":"Get in touch with one of our support agents"
+    },
+    {
+        "text":"FAQs",
+        "link":"/refractedstudios/frequently-asked-questions",
+        "desc":"Frequently asked Questions"
+    }
+]

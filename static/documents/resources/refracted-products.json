@@ -1,0 +1,110 @@
+[
+    {
+        "title":"Game Development",
+        "banner":"/static/documents/images/refractedstudios/game-dev-product.png",
+        "link":"/refractedstudios/products/game-development",
+        "alt":"game development"
+    },
+    {
+        "title":"Book Publication",
+        "banner":"/static/documents/images/refractedstudios/book-publication-product.png",
+        "link":"/refractedstudios/products/book-publication",
+        "alt":"book publication"
+    },
+    {
+        "title":"Movie/Show Production",
+        "banner":"/static/documents/images/refractedstudios/movie-prod-product.png",
+        "link":"/refractedstudios/products/movie-show-production",
+        "alt":"movie/show production"
+    },
+    {
+        "title":"Web Hosting",
+        "banner":"/static/documents/images/refractedstudios/web-hosting-product.png",
+        "link":"/refractedstudios/products/web-hosting",
+        "alt":"web hosting"
+    },
+    {
+        "title":"Example Product",
+        "link":"/refractedstudios/products/example-product",
+        "alt":"example product",
+        "inverted":true
+    },
+    {
+        "title":"Example Product",
+        "link":"/refractedstudios/products/example-product",
+        "alt":"example product"
+    },
+    {
+        "title":"Example Product",
+        "link":"/refractedstudios/products/example-product",
+        "alt":"example product",
+        "inverted":true
+    },
+    {
+        "title":"Example Product",
+        "link":"/refractedstudios/products/example-product",
+        "alt":"example product"
+    },
+    {
+        "title":"Example Product",
+        "link":"/refractedstudios/products/example-product",
+        "alt":"example product",
+        "inverted":true
+    },
+    {
+        "title":"",
+        "banner":"/static/documents/images/refractedstudios/see-full-catalog.png",
+        "link":"/refractedstudios/products",
+        "alt":"example product"
+    },
+    {
+        "title":"Example Product",
+        "link":"/refractedstudios/products/example-product",
+        "alt":"example product",
+        "inverted":false
+    },
+    {
+        "title":"Example Product",
+        "link":"/refractedstudios/products/example-product",
+        "alt":"example product",
+        "inverted":true
+    },
+    {
+        "title":"Example Product",
+        "link":"/refractedstudios/products/example-product",
+        "alt":"example product"
+    },
+    {
+        "title":"Example Product",
+        "link":"/refractedstudios/products/example-product",
+        "alt":"example product",
+        "inverted":true
+    },
+    {
+        "title":"Example Product",
+        "link":"/refractedstudios/products/example-product",
+        "alt":"example product"
+    },
+    {
+        "title":"Example Product",
+        "link":"/refractedstudios/products/example-product",
+        "alt":"example product",
+        "inverted":true
+    },
+    {
+        "title":"Example Product",
+        "link":"/refractedstudios/products/example-product",
+        "alt":"example product"
+    },
+    {
+        "title":"Example Product",
+        "link":"/refractedstudios/products/example-product",
+        "alt":"example product",
+        "inverted":true
+    },
+    {
+        "title":"Example Product",
+        "link":"/refractedstudios/products/example-product",
+        "alt":"example product"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+      "title":"RefractedStudios",
+      "desc":"(under construction)",
+      "icon":"/static/documents/images/refractedstudios-icon.png",
+      "link":"refractedstudios",
+      "new_tab":false
+    },
+    {
+      "title":"cookie's cool cardboard box",
+      "desc":"my discord server",
+      "icon":"/static/documents/images/discord_server-icon.png",
+      "link":"https://discord.gg/UkhufU48RS",
+      "new_tab":true
+    },
+    {
+      "title":"Kwispy8",
+      "desc":"my youtube channel",
+      "icon":"https://www.youtube.com/s/desktop/1afc1cab/img/favicon_96x96.png",
+      "link":"https://www.youtube.com/@gdcookieoop",
+      "new_tab":true
+    },
+    {
+      "title":"Mr_UniverseYT",
+      "desc":"a friend of mine",
+      "icon":null,
+      "link":"https://mruniverseyt.github.io",
+      "new_tab":false
+    }
+  ]

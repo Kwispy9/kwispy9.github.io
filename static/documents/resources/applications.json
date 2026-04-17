@@ -1,0 +1,30 @@
+[
+  {
+    "title":"Application Name.exe",
+    "desc":"a really cool and awesome app",
+    "icon":"/static/documents/images/application_name.ico",
+    "link":"/static/applications/downloads/Application Compiler Name.exe",
+    "new_tab":false
+  },
+  {
+    "title":"Calculator.exe",
+    "desc":"a calculator app",
+    "icon":"/static/documents/images/calculator_app.ico",
+    "link":"/static/applications/downloads/Calculator.exe",
+    "new_tab":false
+  },
+  {
+    "title":"Multi-user Whiteboard.zip",
+    "desc":"a whiteboard that multiple people can use together",
+    "icon":"/static/documents/images/multi-user_whiteboard.ico",
+    "link":"/static/applications/downloads/Multi-user Whiteboard.zip",
+    "new_tab":false
+  },
+  {
+    "title":"Bad Apple.zip",
+    "desc":"a 16-year-old animation that's become a meme",
+    "icon":"/static/documents/images/bad_apple-icon.ico",
+    "link":"/static/applications/downloads/bad_apple.zip",
+    "new_tab":false
+  }
+]
