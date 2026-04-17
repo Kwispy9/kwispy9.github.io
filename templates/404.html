@@ -16,58 +16,6 @@
 
     <link rel="stylesheet" href="/static/styles.css">
     <link rel="icon" type="image/png" href="/static/documents/images/favicon.png"/>
-
-    <script defer>
-        fetch('/static/documents/resources/affiliates.json')
-        .then(res => res.json())
-        .then(data => {
-            const list = document.getElementById('affiliates-list');
-            data.forEach((item, index) => {
-                const image = item.icon ? `<img src="${item.icon}" style="width: 16px; height: 16px;">` : '';
-                const target = item.new_tab ? `target="_blank"` : '';
-                const hr = index < data.length - 1 ? `<hr>` : '';
-                list.innerHTML += `
-                    <div class="item">
-                        <a href="${item.link}" ${target}>
-                            ${image}
-                            <span class="title">${item.title} </span><span class="desc">${item.desc}</span>
-                        </a>
-                    </div>
-                    ${hr}
-                `;
-            });
-        });
-
-        try {
-            fetch('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UUCfniCY_P3hQoz4r-d7WbsQ&maxResults=12&key=AIzaSyCNdkS5J4pSsI5LVHwKSjB5EkubcsS1Em4')
-            .then(res => res.json())
-            .then(data => {
-                const channel_frame = document.getElementById("channel-frame")
-                if (data.error) throw new Error(data.error.message);
-                data.items.forEach((item) => {
-                    const THUMBNAIL_URL = item.snippet.thumbnails.medium.url
-                    const TITLE = item.snippet.title
-                    const VIDEO_ID = item.snippet.resourceId.videoId
-
-                    channel_frame.innerHTML += `
-                        <hr>
-                        <div class="video">
-                            <a href="https://www.youtube.com/watch?v=${VIDEO_ID}" target="_blank" style="display: block;">
-                                <img src="${THUMBNAIL_URL}" />
-                                <p>${TITLE}</p>
-                            </a>
-                        </div>
-                    `
-                })
-            })
-        } catch(err) {
-            const channel_frame = document.getElementById("channel-frame")
-            console.error("Failed to load videos:\n",err)
-            channel_frame.textContent("Failed to load videos:\n",err)
-        }
-
-    </script>
-
 </head>
 <body style="background-color: lightgray; color: #181818; margin: 0; margin-left: 5px; margin-right: 5px;">
     <h1 style="margin-top: 0px;">cookie's <span style="text-decoration: underline;">404</span> page</h1>
