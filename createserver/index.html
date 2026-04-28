@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/styles.css"/>
+
+    <title>Create Server</title>
+</head>
+<body>
+    <header>
+        <div class="title">
+            <a href="/createserver">
+                <h1 style="text-decoration: underline;">Create Server</h1>
+                <h3>The Official Website for cookie's Create Mod Server</h3>
+            </a>
+        </div>
+        <div class="nav-buttons">
+            <a class="nav-btn" href="/createserver">
+                HOME
+            </a>
+            <a class="nav-btn" href="/createserver/rules.html">
+                RULES
+            </a>
+        </div>
+    </header>
+    <main>
+        <h1 style="margin-bottom: 5px;">INFORMATION</h1>
+        <div class="info-section">
+            <div class="server-ip-section" style="margin-bottom: 0.5em;">
+                <h3>Server IP:</h3>
+                <code id="textToCopy">67.233.147.24:5000</code><span style="margin: 0 3px;">..................</span><button onclick="copyText()" id="copyBtn">Copy</button>
+            </div>
+            <div class="basic-rules-section">
+                <h3>Server Rules:</h3>
+                <li style="margin-bottom: 10px;">
+                    <code><b>No Hacking/Unfair Advantages</b></code>
+                    <br>
+                    <code style="margin-left: 2em;">This includes things such as resourcepacks, mods, etc.</code>
+                </li>
+                <li style="margin-bottom: 10px;">
+                    <code><b>Keep griefing and stealing minimal</b></code>
+                    <br>
+                    <code style="margin-left: 2em;">The server may be mostly chill, but stay respectful and nice.</code>
+                </li>
+                <a draggable="false" href="/createserver/rules.html" style="text-decoration: none;"><code style="margin: 0;">...more</code></a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function copyText() {
+            const text = document.getElementById("textToCopy").innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                document.getElementById("copyBtn").textContent = "Copied";
+                const container = document.querySelectorAll(".command_box");
+                container.forEach(command_box => {
+                    command_box.style.gap = "298px";
+                })
+            }).catch(err => console.error("Failed to copy:", err));
+            await sleep(2000);
+            document.getElementById("copyBtn").textContent = "Copy";
+            const container = document.querySelectorAll(".command_box");
+            container.forEach(command_box => {
+                command_box.style.gap = "309px";
+            })
+        }
+    </script>
+</body>
+</html>
