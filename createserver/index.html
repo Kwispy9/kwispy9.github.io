@@ -8,20 +8,32 @@
     <title>Create Server</title>
 </head>
 <body>
-    <header>
-        <div class="title">
-            <a href="/createserver">
-                <h1 style="text-decoration: underline;">Create Server</h1>
-                <h3>The Official Website for cookie's Create Mod Server</h3>
-            </a>
+    <header style="display: flex;">
+        <div style="padding-top: 5px;">
+            <img src="/resources/server-icon.png" style="width: 128px; vertical-align: middle; image-rendering: pixelated;">
         </div>
-        <div class="nav-buttons">
-            <a class="nav-btn" href="/createserver">
-                HOME
-            </a>
-            <a class="nav-btn" href="/createserver/rules.html">
-                RULES
-            </a>
+        <div style="margin-left: 20px;">
+            <div class="title">
+                <a href="/createserver">
+                    <h1>
+                        <span style="text-decoration: underline;">Create Server</span>
+                    </h1>
+                    <h3>The Official Website for cookie's Create Mod Server</h3>
+                </a>
+            </div>
+            <div class="nav-buttons">
+                <a class="nav-btn" href="/createserver">
+                    HOME
+                </a>
+                <a class="nav-btn" href="/createserver/rules.html">
+                    RULES
+                </a>
+            </div>
+            <!-- <div>
+                <a class="nav-btn" onclick="history.back()">
+                    BACK
+                </a>
+            </div> -->
         </div>
     </header>
     <main>
@@ -30,6 +42,11 @@
             <div class="server-ip-section" style="margin-bottom: 0.5em;">
                 <h3>Server IP:</h3>
                 <code id="textToCopy">67.233.147.24:5000</code><span style="margin: 0 3px;">..................</span><button onclick="copyText()" id="copyBtn">Copy</button>
+            </div>
+            <div class="modpack-section" style="margin-bottom: 0.5em;">
+                <h3>Modpack Download:</h3>
+                <a style="margin-left: 1em;" href="/resources/Create Server Modpack 1.21.1.zip">CurseForge download</a><br>
+                <a style="margin-left: 1em;" href="/resources/Create Server Modpack 1.21.1.mrpack">Modrinth download</a>
             </div>
             <div class="basic-rules-section">
                 <h3>Server Rules:</h3>
