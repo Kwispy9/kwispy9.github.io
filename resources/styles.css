@@ -22,6 +22,16 @@ body {
     background-color: wheat;
     font-family: sans-serif;
 }
+main {
+    padding-bottom: 500px;
+}
+:target {
+    background-color: #E9D2FD;
+}
+
+sup {
+    text-decoration: underline;
+}
 
 a {
     color: rgb(0, 81, 255);
@@ -34,7 +44,7 @@ a:active {
     text-wrap-mode: nowrap;
     overflow-x: auto;
     overflow-y: visible;
-    padding-bottom: 5px;
+    padding-bottom: 2px;
 }
 .nav-btn {
     margin-top: 5px;
@@ -68,10 +78,9 @@ a:active {
     max-width: 1000px;
     min-width: 500px;
     margin-left: 1em;
+    box-shadow: 20px;
 }
-/* .info-section h3 {
-    text-decoration: underline;
-} */
+
 .server-ip-section code {
     margin: 0;
     margin-left: 1em;
