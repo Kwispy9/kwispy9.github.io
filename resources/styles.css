@@ -34,7 +34,7 @@ a:active {
     text-wrap-mode: nowrap;
     overflow-x: auto;
     overflow-y: visible;
-    padding-bottom: 2px;
+    padding-bottom: 5px;
 }
 .nav-btn {
     margin-top: 5px;
