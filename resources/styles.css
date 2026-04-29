@@ -32,7 +32,9 @@ a:active {
 
 .nav-buttons {
     text-wrap-mode: nowrap;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding-bottom: 2px;
 }
 .nav-btn {
     margin-top: 5px;
