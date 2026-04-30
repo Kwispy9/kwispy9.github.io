@@ -129,6 +129,11 @@ li::marker {
 }
 .navigation-section a {
     margin-top: 5px;
+    display: flex;
+}
+.nav-btn-date {
+    margin-left: auto;
+    font-family: monospace;
 }
 .log-title {
     width: fit-content;
@@ -138,4 +143,8 @@ li::marker {
 }
 [id^="footnote"] {
     scroll-margin-top: 200px;
+}
+
+.log-date {
+    font-family: monospace;
 }
