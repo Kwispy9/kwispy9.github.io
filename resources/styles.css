@@ -30,7 +30,7 @@ body {
 main {
     padding-bottom: 500px;
 }
-:target {
+:target:not(#page-top) {
     background-color: #E9D2FD;
 }
 .log-title:target {
@@ -39,6 +39,12 @@ main {
     border-radius: 0 10px 10px 0;
     border: 2px solid red;
     border-left: 0;
+}
+
+#return-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
 }
 
 a {
