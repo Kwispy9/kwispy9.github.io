@@ -76,14 +76,49 @@ a:active {
 .info-section {
     background-color: rgb(218, 176, 137);
     padding: 8px;
-    padding-right: 18px;
+    padding-right: 16px;
     border-radius: 8px;
     width: fit-content;
     min-height: 150px;
     max-width: 1000px;
     min-width: 500px;
     margin-left: 1em;
-    box-shadow: 20px;
+}
+.outer-div {
+    position: relative;
+    border-radius: 8px;
+    width: fit-content;
+    max-height: 400px;
+    min-height: 150px;
+    max-width: 1000px;
+    min-width: 500px;
+    margin-left: 1em;
+    padding: 11px;
+    background-color: rgb(218, 176, 137);
+
+    overflow: hidden;
+}
+
+.inner-div {
+    background-color: rgb(218, 176, 137);
+    padding-right: 10px;
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+.inner-div::-webkit-scrollbar {
+    width: 8px;
+}
+.inner-div::-webkit-scrollbar-track {
+    background: rgb(218, 176, 137);
+}
+.inner-div::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 5px;
+}
+.inner-div * {
+    scrollbar-color: skyblue rgb(218, 176, 137); /* thumb track */
+    scrollbar-width: thin;
 }
 
 .server-ip-section code {
