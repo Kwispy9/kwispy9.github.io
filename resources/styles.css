@@ -16,7 +16,12 @@ header h1, h3 {
 .title a {
     color: inherit;
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: column;
+}
+.title-line {
+    height: 3px;
+    background-color: currentColor;
 }
 body {
     background-color: wheat;
@@ -28,9 +33,9 @@ main {
 :target {
     background-color: #E9D2FD;
 }
-
-sup {
-    text-decoration: underline;
+.log-title:target {
+    background-color: blue;
+    color: white;
 }
 
 a {
@@ -116,4 +121,18 @@ li::marker {
 
 #copyBtn:hover {
     background: #5a80ac;
+}
+
+.navigation-section {
+    display: flex;
+    flex-direction: column;
+}
+.navigation-section a {
+    margin-top: 5px;
+}
+.log-title {
+    width: fit-content;
+    margin: 0 -8px;
+    padding: 4px 4px 3px 24px;
+    scroll-margin-top: 200px;
 }
