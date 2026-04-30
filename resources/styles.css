@@ -36,6 +36,9 @@ main {
 .log-title:target {
     background-color: blue;
     color: white;
+    border-radius: 0 10px 10px 0;
+    border: 2px solid red;
+    border-left: 0;
 }
 
 a {
@@ -94,6 +97,7 @@ a:active {
     min-width: 500px;
     margin-left: 1em;
     padding: 11px;
+    padding-right: 8px;
     background-color: rgb(218, 176, 137);
 
     overflow: hidden;
@@ -106,21 +110,20 @@ a:active {
     max-height: 400px;
 }
 
+::-webkit-scrollbar-track {
+    background: wheat;
+}
+
 .inner-div::-webkit-scrollbar {
     width: 8px;
 }
 .inner-div::-webkit-scrollbar-track {
     background: rgb(218, 176, 137);
 }
-.inner-div::-webkit-scrollbar-thumb {
-    background: #555;
+::-webkit-scrollbar-thumb {
+    background: #725f46;
     border-radius: 5px;
 }
-.inner-div * {
-    scrollbar-color: skyblue rgb(218, 176, 137); /* thumb track */
-    scrollbar-width: thin;
-}
-
 .server-ip-section code {
     margin: 0;
     margin-left: 1em;
@@ -175,6 +178,8 @@ li::marker {
     margin: 0 -8px;
     padding: 4px 4px 3px 24px;
     scroll-margin-top: 200px;
+    margin-bottom: 5px;
+    margin-top: 15px;
 }
 [id^="footnote"] {
     scroll-margin-top: 200px;
