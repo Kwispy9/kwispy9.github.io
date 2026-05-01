@@ -30,7 +30,7 @@ body {
 main {
     padding-bottom: 500px;
 }
-:target:not(#page-top) {
+:target:not(#page-top, .log-title) {
     background-color: #E9D2FD;
 }
 .log-title:target {
