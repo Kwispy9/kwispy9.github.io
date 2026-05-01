@@ -124,11 +124,18 @@ a:active {
     width: 8px;
 }
 .inner-div::-webkit-scrollbar-track {
-    background: rgb(218, 176, 137);
+    background: #c29458;
+    border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb {
     background: #725f46;
     border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #8a6f4c;
+}
+::-webkit-scrollbar-thumb:active {
+    background: #725f46;
 }
 .server-ip-section code {
     margin: 0;
