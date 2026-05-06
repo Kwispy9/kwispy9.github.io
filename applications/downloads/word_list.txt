@@ -1,70 +1,87 @@
-apple:food,brand
-granola bar:food
-egg:food
-hard boiled egg:food
-kale:food
-shrimp:food
-fried shrimp:food
-shrimp fried rice:food
-rice:food
-brown rice:food
-pumpkin pie:food
-cheese burger:food
-french fries:food
-cupcake:food
-strawberry shortcake:food,cartoon character
-apple pie:food
-pizza:food
-crepe:food
-escargot:food
-truffle:food
-chocolate bar:food
-pickup truck:vehicle
-car:vehicle
-suv:vehicle
-minivan:vehicle
-campervan:vehicle
-toyota carolla:vehicle
-lamborghini:vehicle
-semi-truck:vehicle
-yaht:vehicle
-sailboat:vehicle
-boeing 747:vehicle
-tesla cybertruck:vehicle
-double-decker bus:vehicle
-paper plate:dish
-plastic bowl:dish
-mug:dish
-colander:dish
-strainer:dish
-mixing bowl:dish
-metal bowl:dish
-ceramic plate:dish
-paper bowl:dish
-plastic plate:dish
-glass plate:dish
-glass bowl:dish
-fork:dish,silverware
-metal fork:dish,silverware
-plastic fork:dish,silverware
-bamboo fork:dish,silverware
-spoon:dish,silverware
-metal spoon:dish,silverware
-plastic spoon:dish,silverware
-bamboo spoon:dish,silverware
-whisk:dish,silverware
-bamboo whisk:dish,silverware
-metal whisk:dish,silverware
-plastic whisk:dish,silverware
-porsche:brand
-walmart:brand
-target:brand
-tesla:brand
-toyota:brand
-tubberware:brand
-vaseline:brand
-ziploc:brand
-boeing:brand
-aldis:brand
-trader joes:brand
-lindor:brand
+Apple:food,brand
+Granola Bar:food
+Egg:food
+Hard Boiled Egg:food
+Kale:food
+Shrimp:food
+Fried Shrimp:food
+Shrimp Fried Rice:food
+Rice:food
+Brown Rice:food
+Pumpkin Pie:food
+Cheese Burger:food
+French Fries:food
+Cupcake:food
+Strawberry Shortcake:food,cartoon character
+Apple Pie:food
+Pizza:food
+Crepe:food
+Escargot:food
+Truffle:food
+Chocolate bar:food
+Oreos:food,brand
+Pickup Truck:vehicle
+Car:vehicle
+SUV:vehicle
+Minivan:vehicle
+Campervan:vehicle
+Toyota Carolla:vehicle
+Lamborghini:vehicle
+Semi-Truck:vehicle
+Yaht:vehicle
+Sailboat:vehicle
+Boeing 747:vehicle
+Tesla Cybertruck:vehicle
+Double-Decker Bus:vehicle
+Airplane:vehicle
+SR-71 Blackbird:vehicle
+Saturn V:vehicle
+Artemis II:vehicle
+Paper Plate:dish
+Plastic Bowl:dish
+Mug:dish
+Colander:dish
+Strainer:dish
+Mixing Bowl:dish
+Metal Bowl:dish
+Ceramic Plate:dish
+Paper Bowl:dish
+Plastic Plate:dish
+Glass Plate:dish
+Glass bowl:dish
+Fork:dish,silverware
+Metal Fork:dish,silverware
+Plastic Fork:dish,silverware
+Bamboo Fork:dish,silverware
+Spoon:dish,silverware
+Metal Spoon:dish,silverware
+Plastic Spoon:dish,silverware
+Bamboo Spoon:dish,silverware
+Whisk:dish,silverware
+Bamboo Whisk:dish,silverware
+Metal Whisk:dish,silverware
+Plastic Whisk:dish,silverware
+Porsche:brand
+Walmart:brand
+Target:brand
+Tesla:brand
+Toyota:brand
+Tubberware:brand
+Vaseline:brand
+Ziploc:brand
+Boeing:brand
+Aldis:brand
+Trader Joe's:brand
+Lindor:brand
+WaWa:brand
+Buc-ee's:brand
+Microsoft:brand
+Dell:brand
+Samsung:brand
+Newman's Own:brand
+Mercedes:brand
+Spirit Airlines:brand
+United Airlines:brand
+Great Value:brand
+Home Depot:brand
+Lockheed:brand
