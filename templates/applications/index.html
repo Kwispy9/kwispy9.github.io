@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="../../static/styles.css">
     <script defer>
-        fetch('../static/documents/resources/applications.json')
+        fetch('/static/documents/resources/applications.json')
         .then(res => res.json())
         .then(data => {
             const list = document.getElementById('affiliates-list');
