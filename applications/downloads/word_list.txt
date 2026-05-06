@@ -1,0 +1,70 @@
+apple:food,brand
+granola bar:food
+egg:food
+hard boiled egg:food
+kale:food
+shrimp:food
+fried shrimp:food
+shrimp fried rice:food
+rice:food
+brown rice:food
+pumpkin pie:food
+cheese burger:food
+french fries:food
+cupcake:food
+strawberry shortcake:food,cartoon character
+apple pie:food
+pizza:food
+crepe:food
+escargot:food
+truffle:food
+chocolate bar:food
+pickup truck:vehicle
+car:vehicle
+suv:vehicle
+minivan:vehicle
+campervan:vehicle
+toyota carolla:vehicle
+lamborghini:vehicle
+semi-truck:vehicle
+yaht:vehicle
+sailboat:vehicle
+boeing 747:vehicle
+tesla cybertruck:vehicle
+double-decker bus:vehicle
+paper plate:dish
+plastic bowl:dish
+mug:dish
+colander:dish
+strainer:dish
+mixing bowl:dish
+metal bowl:dish
+ceramic plate:dish
+paper bowl:dish
+plastic plate:dish
+glass plate:dish
+glass bowl:dish
+fork:dish,silverware
+metal fork:dish,silverware
+plastic fork:dish,silverware
+bamboo fork:dish,silverware
+spoon:dish,silverware
+metal spoon:dish,silverware
+plastic spoon:dish,silverware
+bamboo spoon:dish,silverware
+whisk:dish,silverware
+bamboo whisk:dish,silverware
+metal whisk:dish,silverware
+plastic whisk:dish,silverware
+porsche:brand
+walmart:brand
+target:brand
+tesla:brand
+toyota:brand
+tubberware:brand
+vaseline:brand
+ziploc:brand
+boeing:brand
+aldis:brand
+trader joes:brand
+lindor:brand
